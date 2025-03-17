@@ -22,15 +22,15 @@ function atualizarLista() {
     lista.innerHTML = "";
     
     for (let amigo of amigos) {
-        let li = document.createElement("li");
-        li.textContent = amigo;
-        lista.appendChild(li);
+        let item = document.createElement("li");
+        item.textContent = amigo;
+        lista.appendChild(item);
     }
 }
 
 function sortearAmigo() {
     if (amigos.length < 2) {
-        alert("Adicione pelo menos dois amigos para o sorteio.");
+        alert("É necessário pelo menos dois amigos para o sorteio.");
         return;
     }
     
@@ -39,15 +39,14 @@ function sortearAmigo() {
     resultado.innerHTML = "";
     
     for (let i = 0; i < amigos.length; i++) {
-        let indiceSorteado;
+        let sorteado;
         do {
-            indiceSorteado = Math.floor(Math.random() * sorteio.length);
-        } while (sorteio[indiceSorteado] === amigos[i]);
+            sorteado = sorteio.splice(Math.floor(Math.random() * sorteio.length), 1)[0];
+        } while (sorteado === amigos[i]);
         
-        let li = document.createElement("li");
-        li.textContent = `${amigos[i]} --> ${sorteio[indiceSorteado]}`;
-        resultado.appendChild(li);
-        sorteio.splice(indiceSorteado, 1);
+        let item = document.createElement("li");
+        item.textContent = `${amigos[i]} -> ${sorteado}`;
+        resultado.appendChild(item);
     }
 }
 
