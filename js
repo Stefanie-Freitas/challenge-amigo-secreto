@@ -1,6 +1,5 @@
 Aqui está a implementação do JavaScript para adicionar amigos à lista e exibi-los corretamente na página:
 
-
 let amigos = [];
 
 function adicionarAmigo() {
@@ -49,7 +48,6 @@ function sortearAmigo() {
         resultado.appendChild(item);
     }
 }
-
 
 Esse código implementa as funções para:
 
